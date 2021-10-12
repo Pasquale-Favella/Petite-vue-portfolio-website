@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <title>Portfolio Website</title>
+  <!-- font awesome -->
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+  <!-- main css -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- responsive css -->
+  <link rel="stylesheet" type="text/css" href="css/responsive.css">
+  
+</head>
+<body>
+
+<!-- PRELOAD -->
+<div class="preloader">
+  <div class="box">
+    <div></div><div></div><div></div>
+  </div>
+</div>
+<!-- PRELOAD -->
+
+<!-- HEADER -->
+<header class="header" v-scope>
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="logo">
+        <a href="index.html">F</a>
+      </div>
+      <div class="hamburger-btn outer-shadow hover-in-shadow" @click="store.toggleMenu">
+        <span></span>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- HEADER -->
+
+<!-- NAVIGATION MENU -->
+<nav class="nav-menu" v-scope :class="{ active : store.menuOpen }">
+  <div class="close-nav-menu outer-shadow hover-in-shadow" @click="store.toggleMenu">&times;</div>
+  <div class="nav-menu-inner">
+    <ul>
+      <li><a href="#home" class="link-item" :class="{active : store.currentView === 'home' , 'inner-shadow' : store.currentView === 'home', 'outer-shadow' : store.currentView !== 'home', 'hover-in-shadow' : store.currentView !== 'home'}" @click="store.setCurrentView('home')">home</a></li>
+      <li><a href="#about" class="link-item" :class="{active : store.currentView === 'about' , 'inner-shadow' : store.currentView === 'about', 'outer-shadow' : store.currentView !== 'about', 'hover-in-shadow' : store.currentView !== 'about'}" @click="store.setCurrentView('about')">about</a></li>
+      <li><a href="#services" class="link-item" :class="{active : store.currentView === 'services' , 'inner-shadow' : store.currentView === 'services', 'outer-shadow' : store.currentView !== 'services', 'hover-in-shadow' : store.currentView !== 'services'}" @click="store.setCurrentView('services')">services</a></li>
+      <li><a href="#portfolio" class="link-item" :class="{active : store.currentView === 'portfolio' , 'inner-shadow' : store.currentView === 'portfolio', 'outer-shadow' : store.currentView !== 'portfolio', 'hover-in-shadow' : store.currentView !== 'portfolio'}" @click="store.setCurrentView('portfolio')">portfolio</a></li>
+      <li><a href="#contact" class="link-item" :class="{active : store.currentView === 'contact' , 'inner-shadow' : store.currentView === 'contact', 'outer-shadow' : store.currentView !== 'contact', 'hover-in-shadow' : store.currentView !== 'contact'}" @click="store.setCurrentView('contact')">contact</a></li>
+    </ul>
+  </div>
+  <!-- COPYRIGHT -->
+  <p class="copyright-text">&copy; 2021 creation</p>
+  <!-- COPYRIGHT -->
+</nav>
+<!-- NAVIGATION MENU -->
+
+<!-- HOME SECTION -->
+<section class="home-section section" id="home" v-scope :class="{hide : store.currentView !== 'home'}">
+  <!-- HOME SECTION EFFETCTS-->
+  <div class="effect-wrap">
+    <div class="effect effect-1"></div>
+    <div class="effect effect-2">
+      <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+      <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+      <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    </div>
+    <div class="effect effect-3"></div>
+    <div class="effect effect-4"></div>
+    <div class="effect effect-5">
+      <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    </div>
+  </div>
+  <!-- HOME SECTION EFFETCTS-->
+  <div class="container">
+    <div class="row full-screen align-items-center">
+      <div class="home-text">
+        <p>Hello</p>
+        <h2>I'm Fakerina</h2>
+        <h1>Web & Software Developer</h1>
+        <a href="#" class="link-item btn-1 outer-shadow hover-in-shadow" @click="store.setCurrentViewByButton('about')">More About Me</a>
+      </div>
+      <div class="home-img">
+        <div class="img-box inner-shadow">
+          <img src="img/profile-pic.png" class="outer-shadow" alt="profile-pic" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- HOME SECTION -->
+
+<!-- ABOUT SECTION -->
+<section class="about-section section" id="about" v-scope :class="{hide : store.currentView !== 'about'}">
+  <div class="container">
+    <div class="row">
+      <div class="section-title">
+        <h2 data-heading="main info">About me</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="about-img">
+        <div class="img-box inner-shadow">
+          <img src="img/profile-pic.png" class="outer-shadow" alt="profile-pic" loading="lazy">
+        </div>
+        <!-- SOCIAL LINKS -->
+        <div class="social-links">
+          <a href="#" class="outer-shadow hover-in-shadow"><i class="fab fa-github"></i></a>
+          <a href="#" class="outer-shadow hover-in-shadow"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="outer-shadow hover-in-shadow"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="outer-shadow hover-in-shadow"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <!-- SOCIAL LINKS -->
+      </div>
+      <div class="about-info">
+        <p>
+          <span>Hi! My name is Fakerina. I am a Software dev.</span> 
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+        </p>
+        <p>
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <a href="cv.pdf" class="btn-1 outer-shadow hover-in-shadow">Download CV</a>
+        <a href="#" class="link-item btn-1 outer-shadow hover-in-shadow" @click="store.setCurrentViewByButton('contact')">Hire Me</a>
+      </div>
+    </div>
+    <!-- ABOUT TABS -->
+    <div class="row">
+      <div class="about-tabs">
+        <span class="tab-item" :class="{ active: store.aboutTabSelected ==='skills' , 'outer-shadow' : store.aboutTabSelected ==='skills'}" @click="store.switchTab('skills')">skills</span>
+        <span class="tab-item" :class="{ active: store.aboutTabSelected ==='experience' , 'outer-shadow' : store.aboutTabSelected ==='experience'}" @click="store.switchTab('experience')">experience</span>
+        <span class="tab-item" :class="{ active: store.aboutTabSelected ==='education' , 'outer-shadow' : store.aboutTabSelected ==='education'}" @click="store.switchTab('education')">education</span>
+      </div>
+    </div>
+    <!-- ABOUT TABS -->
+
+    <!-- ABOUT TABS SKILLS -->
+    <div class="row">
+      <div class="skills tab-content" :class="{ active: store.aboutTabSelected ==='skills' }">
+        <div class="row">
+
+          <div class="skill-item">
+            <p>React <i class="fab fa-react first-color"></i></p>
+            <div class="progress inner-shadow">
+              <div class="progress-bar" style="width: calc(95% - 14px);">
+                <span>95%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <p>Angular <i class="fab fa-angular first-color"></i></p>
+            <div class="progress inner-shadow">
+              <div class="progress-bar" style="width: calc(75% - 14px);">
+                <span>75%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <p>Express <i class="fab fa-node-js first-color"></i></p>
+            <div class="progress inner-shadow">
+              <div class="progress-bar" style="width: calc(90% - 14px);">
+                <span>90%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <p>Spring Boot <i class="fas fa-leaf first-color"></i></p>
+            <div class="progress inner-shadow">
+              <div class="progress-bar" style="width: calc(70% - 14px);">
+                <span>70%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <p>Mongo DB <i class="far fa-save first-color"></i></p>
+            <div class="progress inner-shadow">
+              <div class="progress-bar" style="width: calc(80% - 14px);">
+                <span>80%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <p>SQL <i class="fas fa-database first-color"></i></p>
+            <div class="progress inner-shadow">
+              <div class="progress-bar" style="width: calc(85% - 14px);">
+                <span>85%</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- ABOUT TABS SKILLS -->
+
+    <!-- ABOUT TABS EXPERIENCE -->
+    <div class="row">
+      <div class="experience tab-content" :class="{ active: store.aboutTabSelected ==='experience' }">
+        <div class="row">
+          <div class="timeline">
+            <div class="row">
+
+              <div class="timeline-item">
+                <div class="timeline-item-inner outer-shadow">
+                  <i class="fas fa-briefcase icon"></i>
+                  <span>Sep, 2018 - Present</span>
+                  <h3>full stack dev</h3>
+                  <h4>Company , anywhere</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-item-inner outer-shadow">
+                  <i class="fas fa-briefcase icon"></i>
+                  <span>Sep, 2017 - Aug, 2018</span>
+                  <h3>Web dev</h3>
+                  <h4>Company , anywhere</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-item-inner outer-shadow">
+                  <i class="fas fa-briefcase icon"></i>
+                  <span>Sep, 2016 - Aug, 2017</span>
+                  <h3>App dev</h3>
+                  <h4>Company , anywhere</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ABOUT TABS EXPERIENCE -->
+    
+    <!-- ABOUT TABS EDUCATION -->
+    <div class="row">
+      <div class="education tab-content" :class="{ active: store.aboutTabSelected ==='education' }">
+        <div class="row">
+          <div class="timeline">
+            <div class="row">
+
+              <div class="timeline-item">
+                <div class="timeline-item-inner outer-shadow">
+                  <i class="fas fa-graduation-cap icon"></i>
+                  <span>2016 - 2016</span>
+                  <h3>Coding Bootcamp</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-item-inner outer-shadow">
+                  <i class="fas fa-graduation-cap icon"></i>
+                  <span>2014 - 2016</span>
+                  <h3>Master degree</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-item-inner outer-shadow">
+                  <i class="fas fa-graduation-cap icon"></i>
+                  <span>2011 - 2014</span>
+                  <h3>Bachelor degree</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT TABS EDUCATION -->
+  </div>
+</section>
+<!-- ABOUT SECTION -->
+
+<!-- SERVICES SECTION -->
+<section class="service-section section" id="services" v-scope :class="{hide : store.currentView !== 'services'}">
+  <div class="container">
+    <div class="row">
+      <div class="section-title">
+        <h2 data-heading="Services">What i do</h2>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="service-item">
+        <div class="service-item-inner outer-shadow">
+          <div class="icon inner-shadow">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>Responsive Design</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-item-inner outer-shadow">
+          <div class="icon inner-shadow">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3>Web Design</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-item-inner outer-shadow">
+          <div class="icon inner-shadow">
+            <i class="fas fa-palette"></i>
+          </div>
+          <h3>Graphic Design</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-item-inner outer-shadow">
+          <div class="icon inner-shadow">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3>Clean Code</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-item-inner outer-shadow">
+          <div class="icon inner-shadow">
+            <i class="fas fa-search"></i>
+          </div>
+          <h3>Seo Marketing</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-item-inner outer-shadow">
+          <div class="icon inner-shadow">
+            <i class="fas fa-bullhorn"></i>
+          </div>
+          <h3>Great support</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- SERVICES SECTION -->
+
+<!-- PORTFOLIO SECTION -->
+
+<section class="portfolio-section section" id="portfolio" v-scope :class="{hide : store.currentView !== 'portfolio'}">
+  <div class="container">
+    <div class="row">
+      <div class="section-title">
+        <h2 data-heading="portfolio">Latest works</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="portfolio-filter">
+        <span class="filter-item" 
+              v-for="filter in store.filters"
+              :class="{ active: store.filterSelected ===`${filter}` , 'outer-shadow' : store.filterSelected ===`${filter}`}"
+              @click="store.setFilter(`${filter}`)"
+        >
+          {{filter}}
+        </span>
+      </div>
+    </div>
+
+    <!-- PORTFOLIO SECTION ITEMS-->
+    <div class="row portfolio-items">
+
+      <div class="loader" :class="{ active : store.isLoading}">
+        <div></div>
+      </div>
+
+      <div class="portfolio-item" 
+            v-for="item in store.filterItems" 
+            :class="{ show: store.filterSelected ===`${item.language}` || store.filterSelected === 'all',
+                      hide : store.filterSelected !==`${item.language}` && store.filterSelected !== 'all'}"
+            @click="store.setPopUpData(item)"
+      >
+        <div class="portfolio-item-inner outer-shadow">
+          <div class="portfolio-item-img">
+            <img :src="store.gitImage()" alt="portfolio" loading="lazy" >
+            <span class="view-project">view project</span>
+          </div>
+          <p class="portfolio-item-title">{{item.name}}</p>
+          
+        </div>
+     </div>
+
+      
+    </div>
+    <!-- PORTFOLIO SECTION ITEMS-->
+  </div>
+</section>
+
+<!-- PORTFOLIO SECTION -->
+
+<!-- CONTACT SECTION -->
+
+<!-- CONTACT SECTION -->
+<section class="contact-section section" id="contact" v-scope :class="{hide : store.currentView !== 'contact'}">
+  <div class="container">
+    <div class="row">
+      <div class="section-title">
+        <h2 data-heading="contact">Get in Touch</h2>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="contact-item">
+        <div class="contact-item-inner outer-shadow">
+          <i class="fas fa-phone"></i>
+          <span>Phone</span>
+          <p>000 123 1234</p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-item-inner outer-shadow">
+          <i class="fas fa-envelope"></i>
+          <span>Email</span>
+          <p>fakerina@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-item-inner outer-shadow">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Address</span>
+          <p>Maio Rossi street 23 italy</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="contact-form">
+        <form >
+          <div class="row">
+            <div class="w-50">
+              <div class="input-group outer-shadow hover-in-shadow">
+                <input class="input-control" type="text" placeholder="Name">
+              </div>
+              <div class="input-group outer-shadow hover-in-shadow">
+                <input class="input-control" type="text" placeholder="Email">
+              </div>
+              <div class="input-group outer-shadow hover-in-shadow">
+                <input class="input-control" type="text" placeholder="Subject">
+              </div>
+            </div>
+            <div class="w-50">
+              <div class="input-group outer-shadow hover-in-shadow">
+                <textarea class="input-control" placeholder="Message"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="submit-btn">
+              <button type="submit" class="btn-1 outer-shadow hover-in-shadow">Send Message</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- PORTFOLIO POPUP -->
+
+<div class="pp portfolio-popup" v-scope 
+
+     :class="{ open: store.popupData }"
+>
+  <div class="pp-details" :class="{ active : store.popupMoreDetails , 'not-active' : !store.popupMoreDetails}" >
+    <div class="pp-details-inner">
+      <div class="pp-title">
+        <h2>{{store?.popupData?.name}}</h2>
+        <p>Category - <span class="pp-project-category">{{store?.popupData?.language}}</span></p>
+      </div>
+      <div class="pp-project-details">
+        <div class="row">
+          <div class="description">
+            <h3>Project Description:</h3>
+            <p>{{store?.popupData?.description ? store?.popupData?.description : 'no description'}}</p>
+          </div>
+          <div class="info">
+            <h3>Project info</h3>
+            <ul>
+              <li>Date - <span>{{new Date(store?.popupData?.created_at).toLocaleDateString()}}</span></li>
+              <li>Last Update - <span>{{new Date(store?.popupData?.pushed_at).toLocaleDateString()}}</span></li>
+              <li>Tools - <span>{{store?.popupData?.language}}</span></li>
+              <li>GitHub <i class="fab fa-github"></i> - <span><a :href="store?.popupData?.html_url" target="_blank">Visit</a></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="separator"></div>
+
+  <div class="pp-main">
+    <div class="pp-main-inner">
+      <div class="pp-project-details-btn outer-shadow hover-in-shadow" @click="store.togglePopUpMoreDetails">
+        Project Details 
+        <i class="fas" :class="{ 'fa-plus' : !store.popupMoreDetails , 'fa-minus' : store.popupMoreDetails }"></i>
+      </div>
+      <div class="pp-close outer-shadow hover-in-shadow" @click="store.setPopUpData(null)" >&times;</div>
+      <img class="pp-img outer-shadow" :src="store?.popupData?.projectImages[store.popupImageSliderIndex]" alt="img">
+      <div class="pp-counter">{{store.popupImageSliderIndex+1}} of {{store?.popupData?.projectImages.length}}</div>
+    </div>
+    <div class="pp-loader">
+      <div></div>
+    </div>
+    <!-- POPUP NAVIGATION-->
+    <div class="pp-prev" @click="store.prevPopUpImage"><i class="fas fa-play"></i></div>
+    <div class="pp-next" @click="store.nextPopUpImage"><i class="fas fa-play"></i></div>
+    <!-- POPUP NAVIGATION-->
+  </div>
+</div>
+<!-- PORTFOLIO POPUP -->
+
+<div class="style-switcher outer-shadow" v-scope>
+  <div class="day-night s-icon outer-shadow hover-in-shadow" @click="store.toggleTheme">
+    <i class="fas"  :class="{'fa-sun' : store.isDarkMode  , 'fa-moon' : !store.isDarkMode  }"></i>
+  </div>
+</div>
+
+<!-- script js -->
+<script src="js/script.js"></script>
+
+<!-- app js -->
+<script type="module" src="js/app.js"></script>
+
+</body>
+</html>
+
